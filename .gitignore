@@ -1,0 +1,11 @@
+# dotenv environment variables file
+.env
+.env.test
+.env.production
+
+### react ###
+.DS_*
+**/*.backup.*
+**/*.back.*
+
+node_modules
