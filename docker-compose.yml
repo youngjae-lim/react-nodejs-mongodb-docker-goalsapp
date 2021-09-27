@@ -25,7 +25,19 @@ services:
       - ./env/backend.env
     depends_on:
       - mongodb
-  # frontend:
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/app/src
+    # need stdin_open & tty to achieve -it flag
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+
 
 # only named volumes!
 volumes:
