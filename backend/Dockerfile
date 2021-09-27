@@ -10,4 +10,8 @@ COPY . .
 
 EXPOSE 80
 
-CMD ["node", "app.js"]
+# Pass user_name and password by running docker run --e command
+ENV MONGODB_USERNAME=user_name
+ENV MONGODB_PASSWORD=user_password
+
+CMD ["npm", "start"]
